@@ -1,6 +1,7 @@
 <template>
   <div class="category-box">
     我是分类页
+  <nav-bar></nav-bar>
   </div>
 </template>
 
@@ -14,7 +15,7 @@ export default {
 
 
 <script setup>
-
+import NavBar from '@/components/NavBar.vue'
 </script>
 
 <style lang="less" scoped>

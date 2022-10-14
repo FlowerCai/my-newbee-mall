@@ -31,8 +31,10 @@
 
 <script>
 export default {
+  name: 'NavBar',
 }
 </script>
+
 <script setup>
 
 </script>
@@ -68,6 +70,7 @@ export default {
           i {
             text-align: center;
             font-size: 22px;
+            // font-size: 82px;
           }
           span{
             font-size: 12px;
