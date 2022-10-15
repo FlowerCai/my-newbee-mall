@@ -1,7 +1,7 @@
 <template>
   <div class="category-box">
     我是分类页
-  <nav-bar></nav-bar>
+  <NavBar></NavBar>
   </div>
 </template>
 

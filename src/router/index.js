@@ -39,6 +39,14 @@ const routes = [
     }
   },
   {
+    path:'/login',
+    name:'login',
+    component: () => import('@/views/Login.vue'),
+    meta: {
+      index: 1,
+    }
+  },
+  {
     path: '/detail',
     name: 'detail',
     component: () => import(/* webpackChunkName: "detail" */ '@/views/Detail.vue'),
@@ -46,6 +54,7 @@ const routes = [
       index: 2
     }
   },
+
 
 
 ]

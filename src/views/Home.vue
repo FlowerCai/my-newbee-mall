@@ -5,6 +5,7 @@
       <i class="iconfont nbiconmenu"></i>
     </router-link>
     </header>
+  <NavBar></NavBar>
   </div>
 </template>
 
