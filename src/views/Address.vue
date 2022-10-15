@@ -23,6 +23,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'Address',
+}
+</script>
+
 <script setup>
 import { reactive, toRefs, onMounted } from 'vue'
 import { getAddressList } from '@/service/address'
