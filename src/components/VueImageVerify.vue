@@ -9,6 +9,7 @@ export default {
   name: 'VueImageVerify',
 }
 </script>
+
 <script setup>
 import { onMounted, reactive, ref, toRefs } from 'vue';
 
@@ -111,8 +112,11 @@ const draw = () => {
   return imgCode
 }
 
-const {height, width, pool, imgCode } = toRefs(state)
+const {height, width, imgCode } = toRefs(state)
 
+defineExpose({
+  imgCode,
+})
 </script>
 
 <style type="text/css">

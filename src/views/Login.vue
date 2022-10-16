@@ -2,14 +2,14 @@
   <div class="login">
     <SimpleHeader :name="type == 'login' ? '登录' : '注册' " :back="'/home'"></SimpleHeader>
     <img class="logo" src="https://s.yezgea02.com/1604045825972/newbee-mall-vue3-app-logo.png" alt="">
-    <div class="login_body login" v-if="type == 'login'">
-
+    <div v-if="type == 'login'" class="login_body login" >
       <van-form @submit="onSubmit">
         <van-field 
           v-model="username"
+          name="username"
           label="用户名"
           placeholder="用户名"
-          :rules="[{required: true, message: ''}]"
+          :rules="[{required: true, message: '请填写用户名'}]"
           ></van-field>
 
         <van-field
@@ -26,16 +26,20 @@
             clearable
             label="验证码"
             placeholder="输入验证码"
-            v-model="verify"></van-field>
+            v-model="verify">
+            <template #button>
+              <VueImageVerify ref="verifyRef"></VueImageVerify>
+            </template>
+          </van-field>
 
             
-        <VueImageVerify ></VueImageVerify>
+
     
 
       <div style="margin: 16px;">
-      <div class="link-register" @click="toggle('register')">立即注册</div>
-      <van-button round block color="#1baeae" native-type="submit">登录</van-button>
-    </div>
+        <div class="link-register" @click="toggle('register')">立即注册</div>
+          <van-button round block color="#1baeae" native-type="submit">登录</van-button>
+        </div>
       </van-form>
     </div>
 
@@ -64,9 +68,11 @@
           label="验证码"
           placeholder="输入验证码"
           v-model="verify"
-        ></van-field>
-      <!-- 验证码 -->
+        >
         <VueImageVerify ref="verifyRef"></VueImageVerify>
+      </van-field>
+      <!-- 验证码 -->
+
 
 
         <div style="margin: 16px;">
@@ -90,6 +96,7 @@ import {login, register} from '@/service/user'
 import { setLocal } from '@/common/js/utils'
 import md5 from 'js-md5'
 import VueImageVerify from '@/components/VueImageVerify.vue'
+import { Toast } from 'vant'
 
 
 const verifyRef = ref(null)
@@ -112,13 +119,16 @@ const toggle = (v) => {
 
 // 提交登录或注册表单
 const onSubmit = async (values) => {
-  console.log('here', 'verifyRef.value.imgCode', verifyRef.value.imgCode)
+  console.log(values)
+  console.log('verifyRef.value.imgCode', verifyRef.value.imgCode)
   state.imgCode = verifyRef.value.imgCode || ''
   if (state.verify.toLowerCase() != state.imgCode.toLowerCase()) {
     Toast.fail('验证码有误')
     return
   }
   if (state.type == 'login') {
+    console.log('username',values.username)
+    console.log('username',values.password)
     const { data } = await login({
       "loginName": values.username,
       "passwordMd5": md5(values.password)
@@ -137,7 +147,7 @@ const onSubmit = async (values) => {
   }
 }
 
-const {username, password, username1, password1, type, imgCode, verify} = toRefs(state)
+const {username, password, username1, password1, type, verify} = toRefs(state)
 
 </script>
 

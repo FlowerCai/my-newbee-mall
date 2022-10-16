@@ -33,11 +33,14 @@ router.beforeEach((to, from) => {
 
 const { transitionName } = toRefs(state)
 
-
-
 </script>
 
-<style lang="less" scoped>
+<script>
+export default {
+  name: 'App',
+}
+</script>
+<style lang="less">
 @import './common/style/mixin';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
