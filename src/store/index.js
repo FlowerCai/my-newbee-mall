@@ -3,13 +3,20 @@ import state from './state'
 import actions from './actions'
 import mutations from './mutations'
 
+
 export default createStore({
-  namespaced: true,
   state,
   mutations,
-
   actions,
-  modules: {}
+  // actions: {
+  //   async updateCart(ctx) {
+  //     const { data } = await getCart()
+  //     ctx.commit('addCart', {
+  //       count: data.length || 0,
+  //     })
+  //   },
+  // },
+  modules: {},
 })
 
 

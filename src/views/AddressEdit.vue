@@ -16,6 +16,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'AddressEdit',
+}
+</script>
+
 <script setup>
 import { reactive, onMounted, toRefs } from 'vue'
 import { Toast } from 'vant'

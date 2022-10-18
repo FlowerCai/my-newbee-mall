@@ -9,7 +9,7 @@ export function getQueryString(name) {
 }
 
 export const getLocal = (name) => {
-  console.log(name)
+  // console.log(name)
   return localStorage.getItem(name)
 }
 

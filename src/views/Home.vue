@@ -143,6 +143,7 @@ const state = reactive({
   ],
   loading: true
 })
+
 onMounted(async () => {
   const token = getLocal('token')
   if (token) {
@@ -156,7 +157,6 @@ onMounted(async () => {
   });
   const { data } = await getHome()
   state.swiperList = data.carousels
-  console.log('picture', data)
   state.newGoodses = data.newGoodses
   state.hots = data.hotGoodses
   state.recommends = data.recommendGoodses

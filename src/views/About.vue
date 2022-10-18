@@ -20,6 +20,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'About',
+}
+</script>
+
 <script setup>
 import SimpleHeader from '@/components/SimpleHeader.vue';
 </script>

@@ -1,11 +1,9 @@
 import { getCart } from '../service/cart'
 
 export default {
-  async updateCart(ctx) {
+  async updateCart( { commit }) {
     const { data } = await getCart()
-    console.log('yes')
-
-    ctx.commit('addCart', {
+    commit('addCart', {
       count: data.length || 0
     })
   }
