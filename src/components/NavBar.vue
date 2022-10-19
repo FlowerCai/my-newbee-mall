@@ -1,6 +1,4 @@
 <template>
-
-
   <div class="nav-bar van-hairline-top">
     <ul class="nav-list">
       <router-link class="nav-list-item active" to="/home">
@@ -22,11 +20,8 @@
         <i class="iconfont nbiconwode"></i>
         <span>我的</span>
       </router-link>
-
     </ul>
-
   </div>
-
 </template>
 
 <script>

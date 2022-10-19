@@ -17,7 +17,6 @@ export default {
 }
 </script>
 
-
 <script setup>
 import { reactive, onMounted, toRefs } from 'vue'
 import md5 from 'js-md5'
